@@ -16,16 +16,17 @@ let engineer = [];
 let intern = [];
 let option = "";
 
+// p_1 ask the options, p_2 if engineer, p_3 if intern
 let p_1 = () => prompt([questions[1]]);
 let p_2 = () => prompt([questions[2]]);
 let p_3 = () => prompt([questions[3]]);
 
 prompt([questions[0], questions[1]]).then((ans) => {
   console.log(ans);
-  manager = ans.manager.split(" ");
+  manager.push(ans.manager.split(" "));
   console.log(manager);
   //initialte a new manager instance
-  //assign option value so to run while loop
+  //assign option value so to run (while loop) change to recursive calls. otherwise have to use async/await
   option = ans.options;
   check_option(option);
 });
@@ -64,7 +65,5 @@ function check_option(op) {
         "\nintern" +
         intern.length
     );
-
-    return;
   }
 }
