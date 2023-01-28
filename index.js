@@ -1,11 +1,9 @@
 const inquirer = require("inquirer");
-const Employee = require("./lib/Employee");
-const Manager = require("./lib/Manager");
-const Intern = require("./lib/Intern");
-const Engineer = require("./lib/Engineer");
 const fs = require("fs");
 const { questions } = require("./src/questions");
-const internal = require("stream");
+const { renderManger } = require("./src/renderManager");
+const { renderEngineer } = require("./src/renderEngineer");
+const { renderIntern } = require("./src/renderIntern");
 
 const prompt = inquirer.createPromptModule();
 
@@ -21,15 +19,26 @@ let p_1 = () => prompt([questions[1]]);
 let p_2 = () => prompt([questions[2]]);
 let p_3 = () => prompt([questions[3]]);
 
-prompt([questions[0], questions[1]]).then((ans) => {
-  console.log(ans);
-  manager.push(ans.manager.split(" "));
-  console.log(manager);
-  //initialte a new manager instance
-  //assign option value so to run (while loop) change to recursive calls. otherwise have to use async/await
-  option = ans.options;
-  check_option(option);
-});
+prompt([questions[0], questions[1]])
+  .then((ans) => {
+    console.log(ans);
+    manager.push(ans.manager.split(" "));
+    console.log(manager);
+    //initialte a new manager instance
+    //assign option value so to run (while loop) change to recursive calls. otherwise have to use async/await
+    option = ans.options;
+    check_option(option);
+  })
+  .then(() => {
+     console.log(
+       "manage" +
+         manager.length +
+         "\nengineer" +
+         engineer.length +
+         "\nintern" +
+         intern.length
+     );
+  });
 
 // let manager1 = new Manager(...manager);
 
@@ -57,13 +66,7 @@ function check_option(op) {
     });
   } else {
     //finish
-    console.log(
-      "manage" +
-        manager.length +
-        "\nengineer" +
-        engineer.length +
-        "\nintern" +
-        intern.length
-    );
+   
+    return;
   }
 }
