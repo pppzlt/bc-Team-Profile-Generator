@@ -55,7 +55,6 @@ function check_option(op) {
     let cards = createComponents();
     createFile();
     appendComponents(cards);
-    console.log(`${manager.length}  ${engineer.length}   ${intern.length}`);
   }
 }
 // create cards components
