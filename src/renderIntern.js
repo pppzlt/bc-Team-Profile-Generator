@@ -1,6 +1,6 @@
 const Intern = require("../lib/Intern");
 
-function renderIntern() {
+function renderIntern(input) {
   let intern_o = new Intern(...input);
 
   return `<div class="card" style="width: 18rem">
