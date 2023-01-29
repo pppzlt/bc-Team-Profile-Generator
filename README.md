@@ -26,7 +26,7 @@
 
 ### potential provement
 
-<li>Could using async and await to avoid callback hell. This would replace all then() handler.
+<li>Could using async and await to avoid callback hell. This would replace all then() handler. (solved callback hell using promise then!)
 <li>Could using Regex to validate the user input. Did in the last assignment, not doing this time.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
