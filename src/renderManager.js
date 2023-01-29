@@ -3,7 +3,7 @@ const Manager = require("../lib/Manager");
 function renderManger(input) {
   let manager_o = new Manager(...input);
   
-  return `<div class="card" style="width: 18rem">
+  return `<div class="card mb-2" style="width: 18rem">
         <div class="cad-body">
           <div class="bg-success p-5 text-white">
             <h5 class="card-title">${manager_o.getName()}</h5>

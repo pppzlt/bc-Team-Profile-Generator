@@ -6,13 +6,14 @@ const { renderEngineer } = require("./src/renderEngineer");
 const { renderIntern } = require("./src/renderIntern");
 const { top, bottom } = require("./src/components");
 
-const prompt = inquirer.prompt;
 
+// store all user inputs below
 let manager = [];
 let engineer = [];
 let intern = [];
 let option = "";
 
+const prompt = inquirer.prompt;
 // p_1 ask the options, p_2 if engineer, p_3 if intern
 let p_1 = () => prompt([questions[1]]);
 let p_2 = () => prompt([questions[2]]);
@@ -22,7 +23,7 @@ prompt([questions[0], questions[1]]).then((ans) => {
   manager.push(ans.manager.split(" "));
   //assign option value so to run (while loop) change to recursive calls. otherwise have to use async/await
   option = ans.options;
-  check_option(option);
+  return check_option(option);
 });
 
 //use function recursion to do loop
@@ -36,7 +37,7 @@ function check_option(op) {
         // console.log(ans);
         option = ans.options;
         //recursive call
-        check_option(option);
+        return check_option(option);
       });
     });
   } else if (op === "Add an intern") {
@@ -47,7 +48,7 @@ function check_option(op) {
         // console.log(ans);
         option = ans.options;
         //recursive call
-        check_option(option);
+        return check_option(option);
       });
     });
   } else {
@@ -55,11 +56,12 @@ function check_option(op) {
     let cards = createComponents();
     createFile();
     appendComponents(cards);
+    return;
   }
 }
 // create cards components
 function createComponents() {
-  let components ='';
+  let components = "";
   for (let m of manager) {
     components += renderManger(m);
   }

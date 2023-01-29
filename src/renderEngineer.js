@@ -3,7 +3,7 @@ const Engineer = require("../lib/Engineer");
 function renderEngineer(input) {
   let engineer_o = new Engineer(...input);
 
-  return `<div class="card" style="width: 18rem">
+  return `<div class="card mb-2" style="width: 18rem">
         <div class="cad-body">
           <div class="bg-success p-5 text-white">
             <h5 class="card-title">${engineer_o.getName()}</h5>
