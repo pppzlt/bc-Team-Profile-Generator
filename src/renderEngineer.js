@@ -18,7 +18,7 @@ function renderEngineer(input) {
               <a href="mailto:${engineer_o.getEmail()}">${engineer_o.getEmail()}</a>
             </ul>
             <ul class="list-group-item">
-              Github username: ${engineer_o.getGithub()}
+              Github username: <a href="https://github.com/${engineer_o.getGithub()}" target="_blank">${engineer_o.getGithub()}</a>
             </ul>
           </li>
         </div>

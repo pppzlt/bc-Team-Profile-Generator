@@ -53,6 +53,7 @@ function check_option(op) {
     });
   } else {
     //finish
+    console.log(`${manager.length},${engineer.length},${intern.length}`)
     let cards = createComponents();
     createFile();
     appendComponents(cards);
@@ -68,7 +69,7 @@ function createComponents() {
   for (let e of engineer) {
     components += renderEngineer(e);
   }
-  for (let i of engineer) {
+  for (let i of intern) {
     components += renderIntern(i);
   }
   return components;

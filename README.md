@@ -45,6 +45,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Lantao Zhang - lantaook@gmail.com
 
-Video link: [https://pppzlt.github.io/bc-weather/](https://pppzlt.github.io/bc-weather/)
+Video link: [click here](https://drive.google.com/file/d/11rPC1ZkH138cwEOBL4PnVFRYVg5DsClD/view)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
