@@ -83,3 +83,63 @@ function appendComponents(content) {
   fs.writeFileSync("./dist/index.html", content, { flag: "a" });
   fs.writeFileSync("./dist/index.html", bottom, { flag: "a" });
 }
+
+
+//----------------------------------------------using async await and while loop, should perform better! worked, but has to remove all those then(). leave and comment out below.
+// (async () => {
+//   prompt([questions[0], questions[1]]).then(async (ans) => {
+//     console.log(ans);
+//     manager = ans.manager.split(" ");
+//     console.log(manager);
+
+//     //assign option value so to run while loop
+//     option = ans.options;
+//     while (option !== "Finish building team") {
+//       await check_option(option);
+//     }
+//     console.log(
+//       "manage" +
+//         manager.length +
+//         "\nengineer" +
+//         engineer.length +
+//         "\nintern" +
+//         intern.length
+//     );
+//   });
+// })();
+
+// async function check_option(op) {
+//   if (op === "Add an engineer") {
+//     await p_2().then(async (ans) => {
+//       console.log(ans);
+//       engineer.push(ans.engineer.split(" "));
+//       await p_1().then((ans) => {
+//         console.log(ans);
+//         option = ans.options;
+//         // check_option(option);
+//       });
+//     });
+//   } else if (op === "Add an intern") {
+//     await p_3().then(async (ans) => {
+//       console.log(ans);
+//       intern.push(ans.intern.split(" "));
+//       await p_1().then((ans) => {
+//         console.log(ans);
+//         option = ans.options;
+//         // check_option(option);
+//       });
+//     });
+//   } else {
+//     //finish
+//     console.log(
+//       "manage" +
+//         manager.length +
+//         "\nengineer" +
+//         engineer.length +
+//         "\nintern" +
+//         intern.length
+//     );
+
+//     return;
+//   }
+// }
